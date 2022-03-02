@@ -18,7 +18,7 @@ const PetsState = (props) => {
 
 	const getPets = async () => {
 
-		const res = await axiosClient.get("http://localhost:3005/api/pets")
+		const res = await axiosClient.get("/api/pets")
 
 		const arrCats = res.data.data
 
@@ -31,7 +31,7 @@ const PetsState = (props) => {
 
 	const createPet = async (dataForm) => {
 
-		await axiosClient.post("http://localhost:3005/api/pets/create", dataForm)
+		await axiosClient.post("/api/pets/create", dataForm)
 
 		getPets()
 
